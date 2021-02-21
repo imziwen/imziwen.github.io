@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TCP 协议 | 子文</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1cda0c3a27ed754d6344dcce0e142e04";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="dns-prefetch" href="//f1g1ns1.dnspod.net">
+    <meta name="description" content="前端基础笔记、前端进阶、大前端、JavaScript">
+    <meta name="baidu-site-verification" content="C7pbYsRSpU">
+    <meta name="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="author" content="ziwen,okziwen@foxmail.com">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="ziwen">
+    
+    <link rel="preload" href="/assets/css/0.styles.51b25817.css" as="style"><link rel="preload" href="/assets/js/app.eb836ae3.js" as="script"><link rel="preload" href="/assets/js/2.ae751d9e.js" as="script"><link rel="preload" href="/assets/js/43.7deebcbc.js" as="script"><link rel="prefetch" href="/assets/js/10.8f825347.js"><link rel="prefetch" href="/assets/js/11.597d2775.js"><link rel="prefetch" href="/assets/js/12.e2e55ac4.js"><link rel="prefetch" href="/assets/js/13.b03fac96.js"><link rel="prefetch" href="/assets/js/14.0aa3e23e.js"><link rel="prefetch" href="/assets/js/15.3d86c8e4.js"><link rel="prefetch" href="/assets/js/16.629ad7d5.js"><link rel="prefetch" href="/assets/js/17.0c74553e.js"><link rel="prefetch" href="/assets/js/18.571f7e93.js"><link rel="prefetch" href="/assets/js/19.7d9e96d1.js"><link rel="prefetch" href="/assets/js/20.39d2e0b3.js"><link rel="prefetch" href="/assets/js/21.43009c00.js"><link rel="prefetch" href="/assets/js/22.ac4d6a08.js"><link rel="prefetch" href="/assets/js/23.b5191e81.js"><link rel="prefetch" href="/assets/js/24.efb959dd.js"><link rel="prefetch" href="/assets/js/25.19744ba8.js"><link rel="prefetch" href="/assets/js/26.4ae69b3f.js"><link rel="prefetch" href="/assets/js/27.404fa40f.js"><link rel="prefetch" href="/assets/js/28.00dc2408.js"><link rel="prefetch" href="/assets/js/29.c2cd1e1f.js"><link rel="prefetch" href="/assets/js/3.d7f43caa.js"><link rel="prefetch" href="/assets/js/30.2a8d59ae.js"><link rel="prefetch" href="/assets/js/31.1e1848a4.js"><link rel="prefetch" href="/assets/js/32.5513e776.js"><link rel="prefetch" href="/assets/js/33.cf2fc24e.js"><link rel="prefetch" href="/assets/js/34.87974ea8.js"><link rel="prefetch" href="/assets/js/35.7598f0c6.js"><link rel="prefetch" href="/assets/js/36.252697f9.js"><link rel="prefetch" href="/assets/js/37.63a165fc.js"><link rel="prefetch" href="/assets/js/38.f9bca2e7.js"><link rel="prefetch" href="/assets/js/39.95502901.js"><link rel="prefetch" href="/assets/js/4.51636a74.js"><link rel="prefetch" href="/assets/js/40.0644537e.js"><link rel="prefetch" href="/assets/js/41.36a1ba26.js"><link rel="prefetch" href="/assets/js/42.bd3229bb.js"><link rel="prefetch" href="/assets/js/44.4ce2bb70.js"><link rel="prefetch" href="/assets/js/45.4bba0068.js"><link rel="prefetch" href="/assets/js/46.02abbf2b.js"><link rel="prefetch" href="/assets/js/47.bc0b6150.js"><link rel="prefetch" href="/assets/js/48.ee3c5188.js"><link rel="prefetch" href="/assets/js/49.d4fb47e1.js"><link rel="prefetch" href="/assets/js/5.19a76e31.js"><link rel="prefetch" href="/assets/js/50.081f62bb.js"><link rel="prefetch" href="/assets/js/51.cd149d5c.js"><link rel="prefetch" href="/assets/js/52.026ea95e.js"><link rel="prefetch" href="/assets/js/53.943d6d12.js"><link rel="prefetch" href="/assets/js/54.39c6e7fe.js"><link rel="prefetch" href="/assets/js/55.6c79d6ef.js"><link rel="prefetch" href="/assets/js/56.7f3f674e.js"><link rel="prefetch" href="/assets/js/6.8e072023.js"><link rel="prefetch" href="/assets/js/7.f9c24c6d.js"><link rel="prefetch" href="/assets/js/8.5930276f.js"><link rel="prefetch" href="/assets/js/9.123f2c7c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.51b25817.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/Javascript.gif" alt="子文" class="logo"> <span class="site-name can-hide">子文</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/think/" class="nav-link">
+  周边
+</a></div><div class="nav-item"><a href="/question/" class="nav-link router-link-active">
+  笔记(更新中...)
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/think/" class="nav-link">
+  周边
+</a></div><div class="nav-item"><a href="/question/" class="nav-link router-link-active">
+  笔记(更新中...)
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript篇</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>TypeScript篇</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>框架篇</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>性能篇</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目工程篇</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML篇</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS篇</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>网络篇</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/question/4/network.html" class="sidebar-link">✨ 从输入 URL 到看到页面发生的全过程</a></li><li><a href="/question/4/response.html" class="sidebar-link">✨ Response Header</a></li><li><a href="/question/4/kuayu.html" class="sidebar-link">跨域</a></li><li><a href="/question/4/tcp.html" aria-current="page" class="active sidebar-link">TCP 协议</a></li><li><a href="/question/4/udp.html" class="sidebar-link">UDP 协议</a></li><li><a href="/question/4/https.html" class="sidebar-link">Https</a></li><li><a href="/question/4/browsercache.html" class="sidebar-link">浏览器缓存</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="tcp-协议"><a href="#tcp-协议" class="header-anchor">#</a> TCP 协议</h1> <blockquote><p>TCP 协议简单来说是一种位于传输层的，面向连接的、可靠的、基于字节流的传输层通信协议.</p></blockquote> <p>TCP 协议的特点:</p> <ul><li>TCP 是面向连接的传输层协议。比如说 TCP 的三次握手，四次分手，针对的都是连接。</li> <li>每一条 TCP 连接只能有两个端点，每一条 TCP 连接是点对点的。也就是说 TCP 是不同计算机之间的进程的通信。</li> <li>TCP 提供可靠交付的服务，无差错，不丢失，不重复，按序到达。总结一下就是，可靠有序，不丢不重。</li> <li>TCP 提供全双工通信。全双工指的是连接双方可以同时收发数据。在收发两端都有发送缓存和接收缓存，发送缓存就是一个准备发送的队列，接收缓存是一个准备接收的队列。</li> <li>TCP 面向字节流。如下图，我们解释一下什么是面向字节流</li></ul> <img src="/img/question/network/tcp.png" alt="tcp" title="tcp" class="zoom-custom-imgs"> <p>图中的 1，2，3，4.....数据块，每一个表示一个字节。tcp 将应用层的数据变为了这样的字节进行发送.</p> <p>TCP 报文的首部格式
+如下图所示，我们看一下比较重要的一些首部字段，这里我们介绍固定的 20 字节的 TCP 首部</p> <img src="/img/question/network/tcphead.png" alt="tcp首部" title="tcp首部" class="zoom-custom-imgs"> <ul><li><p>源端口和目的端口分别是指发送方应用程序的端口和目的方应用程序的端口号。</p></li> <li><p>序号是指在一个 TCP 连接中传送的字节流中的每一个字节都按顺序编号，本字段表示本报文段所发送数据的第一个字节的序号。</p></li> <li><p>确认号是指期望收到对方下一个报文段的第一个数据字节的序号。弱确认好位 n，则证明到需要 N-1 为止所有的数据都已经正确收到。如下图，我们举例说明一下</p></li></ul> <img src="/img/question/network/tcpqr.png" alt="tcp" title="tcp" class="zoom-custom-imgs"> <p>接收方收到了 1，2，3 个字节组成的数据包，然后接收方就会发送一个确认报文给发送方，其中确认报文的确认号就应该是 4，因为 1，2，3 这三个字节的组成的数据包已经收到了。</p> <ul><li>数据偏移指的是 TCP 报文段的数据起始处举例 TCP 报文段的起始处有多远。</li> <li>6 个控制位介绍如下
+<table><thead><tr><th style="text-align:left;">控制位</th> <th style="text-align:left;">作用</th></tr></thead> <tbody><tr><td style="text-align:left;">ACK</td> <td style="text-align:left;">置 1 时表示确认号合法，为 0 的时候表示数据段不包含确认信息，确认号被忽略</td></tr> <tr><td style="text-align:left;">PSH</td> <td style="text-align:left;">置 1 时请求的数据段在接收方得到后就可直接送到应用程序，而不必等到缓冲区满时才传送</td></tr> <tr><td style="text-align:left;">RST</td> <td style="text-align:left;">置 1 时重建连接。如果接收到 RST 位时候，通常发生了某些错</td></tr> <tr><td style="text-align:left;">SYN</td> <td style="text-align:left;">置 1 时用来发起一个连接</td></tr> <tr><td style="text-align:left;">FIN</td> <td style="text-align:left;">置 1 时表示发端完成发送任务。用来释放连接，表明发送方已经没有数据发送了</td></tr> <tr><td style="text-align:left;">URG</td> <td style="text-align:left;">紧急指针，告诉接收 TCP 模块紧要指针域指着紧要数据</td></tr></tbody></table></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/question/4/kuayu.html" class="prev">
+        跨域
+      </a></span> <span class="next"><a href="/question/4/udp.html">
+        UDP 协议
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.eb836ae3.js" defer></script><script src="/assets/js/2.ae751d9e.js" defer></script><script src="/assets/js/43.7deebcbc.js" defer></script>
+  </body>
+</html>
